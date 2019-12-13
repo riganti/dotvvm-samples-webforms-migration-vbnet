@@ -12,7 +12,7 @@ Public Class Startup
     Public Sub Configuration(app As IAppBuilder)
 
         'get DotVVM app location
-        Dim dotvvmAppLocation = Path.Combine(HostingEnvironment.ApplicationPhysicalPath, ConfigurationManager.AppSettings("dotvvm:AppLocation"))
+        Dim dotvvmAppLocation = Path.GetFullPath(Path.Combine(HostingEnvironment.ApplicationPhysicalPath, ConfigurationManager.AppSettings("dotvvm:AppLocation")))
 
         'register DotVVM in the pipeline
         app.UseDotVVM(Of DotvvmStartup)(dotvvmAppLocation)
