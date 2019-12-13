@@ -227,9 +227,6 @@
     <Compile Include="Global.asax.vb">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Model\AppDbContext.vb" />
-    <Compile Include="Model\AppDbInitializer.vb" />
-    <Compile Include="Model\Customer.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -298,6 +295,10 @@
     <ProjectReference Include="..\OldWebApp.DotVVM\OldWebApp.DotVVM.csproj">
       <Project>{1c7a9914-8cdc-4075-9422-37bd0e51c076}</Project>
       <Name>OldWebApp.DotVVM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OldWebApp.Model\OldWebApp.Model.vbproj">
+      <Project>{efb8f12c-e033-4786-8357-759ad31620b0}</Project>
+      <Name>OldWebApp.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
