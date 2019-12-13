@@ -51,7 +51,7 @@ Now you can create new pages in the application using DotVVM, and start an incre
 * A viewmodel [SiteViewModel.cs](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/03_migration_in_progress/src/OldWebApp/OldWebApp.DotVVM/ViewModels/SiteViewModel.cs) with an abstract property `Title` was added in the project. 
 * A resources for jQuery and Bootstrap were configured in [DotvvmStartup.cs](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/03_migration_in_progress/src/OldWebApp/OldWebApp.DotVVM/DotvvmStartup.cs).
 * The [About.dothtml](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/03_migration_in_progress/src/OldWebApp/OldWebApp.DotVVM/Views/About.dothtml) page was migrated in the DotVVM project and removed from the Web Forms project.
-* The route registrations for the migrated pages were moved from [Global.asax.cs](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/03_migration_in_progress/src/OldWebApp/OldWebApp/Global.asax.cs) to [DotvvmStartup.cs](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/03_migration_in_progress/src/OldWebApp/OldWebApp.DotVVM/DotvvmStartup.cs).
+* The route registrations for the migrated pages were moved from [Global.asax.vb](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/03_migration_in_progress/src/OldWebApp/OldWebApp/Global.asax.vb) to [DotvvmStartup.cs](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/03_migration_in_progress/src/OldWebApp/OldWebApp.DotVVM/DotvvmStartup.cs).
 
 The deployment model of the application remains the same - you don't need to change anything. This stage can take a long time as there may be hundreds of pages in the application.
 
@@ -61,8 +61,8 @@ Since the DotVVM project is refefenced from the Web Forms project, the business 
 
 ### Step 4: The `04_migration_complete` branch shows all the pages migrated to DotVVM.
 
-* The [Default.dothtml](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/04_migration_complete/src/OldWebApp/OldWebApp/Views/Default.dothtml) was migrated and demonstrates the [GridView](https://www.dotvvm.com/docs/controls/builtin/GridView/latest) and [DataPager](https://www.dotvvm.com/docs/controls/builtin/DataPager/latest) controls in DotVVM. 
-* The [DefaultViewModel.cs](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/04_migration_complete/src/OldWebApp/OldWebApp/ViewModels/DefaultViewModel.cs) demonstrates the MVVM approach for data-binding and the usage of `GridViewDataSet`.
+* The [Default.dothtml](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/04_migration_complete/src/OldWebApp/OldWebApp.DotVVM/Views/Default.dothtml) was migrated and demonstrates the [GridView](https://www.dotvvm.com/docs/controls/builtin/GridView/latest) and [DataPager](https://www.dotvvm.com/docs/controls/builtin/DataPager/latest) controls in DotVVM. 
+* The [DefaultViewModel.cs](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/04_migration_complete/src/OldWebApp/OldWebApp.DotVVM/ViewModels/DefaultViewModel.cs) demonstrates the MVVM approach for data-binding and the usage of `GridViewDataSet`.
 
 The viewmodel was using the business logic that was present in the `Model` folder. This logic was moved to the class library project so it can be used from both Web Forms and DotVVM apps.
 
@@ -71,7 +71,7 @@ In real-world applications, there might be some other things to change like auth
 
 ### Step 5: The `05_dotnetcore` branch shows the changes made to the project file in order to switch the project to .NET Core 3.0.
 
-* The [OldWebApp.csproj](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/05_dotnetcore/src/OldWebApp/OldWebApp.NetCore/OldWebApp.NetCore.csproj) was converted to the new format and the `Dotvvm.Owin` package was replaced by `Dotvvm.AspNetCore`.
+* The [OldWebApp.NetCore.csproj](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/05_dotnetcore/src/OldWebApp/OldWebApp.NetCore/OldWebApp.NetCore.csproj) was converted to the new format and the `Dotvvm.Owin` package was replaced by `Dotvvm.AspNetCore`.
 * The scripts and CSS files were moved to the `wwwroot` folder.
 * The [Startup.cs](https://github.com/riganti/dotvvm-samples-webforms-migration-vbnet/blob/05_dotnetcore/src/OldWebApp/OldWebApp.NetCore/Startup.cs) was updated to use the ASP.NET Core `IServiceCollection` and `IAppBuilder`.
 
