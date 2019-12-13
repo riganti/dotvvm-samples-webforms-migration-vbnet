@@ -5,7 +5,5 @@ Public Class Global_asax
 
     Sub Application_Start(sender As Object, e As EventArgs)
         Database.SetInitializer (new AppDbInitializer())
-
-        RouteTable.Routes.MapPageRoute("Default", "", "~/Default.aspx")
     End Sub
 End Class

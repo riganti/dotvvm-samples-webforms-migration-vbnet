@@ -18,6 +18,7 @@ namespace OldWebApp.DotVVM
 
         private void ConfigureRoutes(DotvvmConfiguration config, string applicationPath)
         {
+            config.RouteTable.Add("Default", "", "Views/Default.dothtml");
             config.RouteTable.Add("About", "About", "Views/About.dothtml");
         }
 
@@ -41,6 +42,8 @@ namespace OldWebApp.DotVVM
         public void ConfigureServices(IDotvvmServiceCollection options)
         {
             options.AddDefaultTempStorages("temp");
-		}
+
+            options.Services.AddScoped<AppDbContext>();
+        }
     }
 }
