@@ -1,4 +1,4 @@
-﻿@viewModel OldWebApp.DotVVM.ViewModels.AboutViewModel, OldWebApp.DotVVM
+﻿@viewModel OldWebApp.DotVVM.ViewModels.AboutViewModel, OldWebApp
 @masterPage Views/Site.dotmaster
 
 <dot:Content ContentPlaceHolderID="MainContent">

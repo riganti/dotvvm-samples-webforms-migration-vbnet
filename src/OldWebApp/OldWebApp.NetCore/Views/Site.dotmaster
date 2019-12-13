@@ -1,4 +1,4 @@
-﻿@viewModel OldWebApp.DotVVM.ViewModels.SiteViewModel, OldWebApp.DotVVM
+﻿@viewModel OldWebApp.DotVVM.ViewModels.SiteViewModel, OldWebApp
 
 <!DOCTYPE html>
 
