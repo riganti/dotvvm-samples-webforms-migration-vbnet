@@ -15,21 +15,30 @@ namespace OldWebApp.DotVVM
             ConfigureResources(config, applicationPath);
         }
 
+
         private void ConfigureRoutes(DotvvmConfiguration config, string applicationPath)
         {
+            config.RouteTable.Add("About", "About", "Views/About.dothtml");
         }
 
         private void ConfigureControls(DotvvmConfiguration config, string applicationPath)
         {
-            // register code-only controls and markup controls
         }
 
         private void ConfigureResources(DotvvmConfiguration config, string applicationPath)
         {
-            // register custom resources and adjust paths to the built-in resources
+            config.Resources.Register("jquery", new ScriptResource()
+            {
+                Location = new UrlResourceLocation("~/Scripts/jquery-3.3.1.min.js"),
+            });
+            config.Resources.Register("bootstrap", new ScriptResource()
+            {
+                Location = new UrlResourceLocation("~/Scripts/bootstrap.min.js"),
+                Dependencies = new[] { "jquery" }
+            });
         }
-		
-		public void ConfigureServices(IDotvvmServiceCollection options)
+
+        public void ConfigureServices(IDotvvmServiceCollection options)
         {
             options.AddDefaultTempStorages("temp");
 		}
